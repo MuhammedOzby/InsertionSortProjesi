@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patika.dev Özelinde (Selection) Insertion Short JS uygulaması</title>
+</head>
+
+<body>
+  <pre>
+  //İstenilen dizi
+  let arr = [22, 27, 16, 2, 18, 6];
+
+  /**
+   * Algoritmanın işlendiği fonksiyon.
+   * @param  {Array} params
+   */
+  function insertionSort(params) {
+    //Dizi uzunluğu: n
+    let n = params.length;
+
+    // Diziyi baştan sona gezecek olan döngü.
+    for (let i = 0; i < n; i++) {
+      /**
+       * tutucu: Takas edilecek olan veri.
+       * imlec: En küçük değere sahip olan verinin göstergesi.
+       **/
+      let tutucu = params[i], imlec = 0;
+      // En son yerleştirilen elemandan itibaren gezecek olan döngü.
+      for (let j = i; j < n; j++) {
+        // Takas saptaması
+        if (tutucu > params[j]) {
+          imlec = j;
+          tutucu = params[j];
+        }
+      }
+      // Takasın sağlanması
+      if (imlec != 0) {
+        params[imlec] = params[i];
+        params[i] = tutucu;
+        document.write(JSON.stringify(params) + "\n");
+      }
+    }
+    return params;
+  }
+
+  insertionSort(arr);
+  </pre>
+  <hr>
+  <pre>
+  <script>
+    //İstenilen dizi
+    let arr = [22, 27, 16, 2, 18, 6];
+
+    /**
+     * Algoritmanın işlendiği fonksiyon.
+     * @param  {Array} params
+     */
+    function insertionSort(params) {
+      //Dizi uzunluğu: n
+      let n = params.length;
+
+      // Diziyi baştan sona gezecek olan döngü.
+      for (let i = 0; i < n; i++) {
+        /**
+         * tutucu: Takas edilecek olan veri.
+         * imlec: En küçük değere sahip olan verinin göstergesi.
+         **/
+        let tutucu = params[i], imlec = 0;
+        // En son yerleştirilen elemandan itibaren gezecek olan döngü.
+        for (let j = i; j < n; j++) {
+          // Takas saptaması
+          if (tutucu > params[j]) {
+            imlec = j;
+            tutucu = params[j];
+          }
+        }
+        // Takasın sağlanması
+        if (imlec != 0) {
+          params[imlec] = params[i];
+          params[i] = tutucu;
+          document.write(JSON.stringify(params) + "\n");
+        }
+      }
+      return params;
+    }
+
+    insertionSort(arr);
+
+  </script>
+  </pre>
+  <hr>
+  <pre>
+    <script>
+      //İstenilen dizi
+      let arr2 = [7, 3, 5, 8, 2, 9, 4, 15, 6];
+
+      insertionSort(arr2);
+
+    </script>
+  </pre>
+
+</body>
+
+</html>
